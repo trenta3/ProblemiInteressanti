@@ -4,7 +4,8 @@
 \RequirePackage{titlesec} % Per modificare i titoli delle sezioni
 \RequirePackage{fancyhdr} % Per modificare l'intestazione ed il piè di pagina
 \RequirePackage{bm}
-
+\RequirePackage{bbm}
+%\RequirePackage{mbboard}
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[italian]{babel}
 \RequirePackage{amsmath}
@@ -153,6 +154,13 @@
 	{\paragrafo{}}
 	{\paragrafo{#1}}}
 
+\newcommand{\frdx}{ \framebox[\width]{ $\Rightarrow$ } }
+\newcommand{\frsx}{ \framebox[\width]{ $\Leftarrow$ } }
+\newcommand{\opp}{\text{ oppure }}
+\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;} 
+\newcommand{\crossmark}{$\times$}
+
+
 %mathbb mathcal mathfrak e mathbm per le lettere dell'alfabeto e anche mathbb per quelle greche
 \def\mydeflett#1{\expandafter\def\csname bb#1\endcsname{\mathbb{#1}}
 		\expandafter\def\csname c#1\endcsname{\mathcal{#1}}
@@ -160,6 +168,10 @@
 		\expandafter\def\csname bl#1\endcsname{\mathbf{#1}}}
 \def\mydefalllett#1{\ifx#1\mydefalllett\else\mydeflett#1\expandafter\mydefalllett\fi}
 \mydefalllett ABCDEFGHIJKLMNOPQRSTUVWXYZ\mydefalllett
+
+\def\mydeffrakmath#1{\expandafter\def\csname k#1\endcsname{\mathfrak{#1}}}
+\def\mydefallfrak#1{\ifx#1\mydefallfrak\else\mydeffrakmath#1\expandafter\mydefallfrak\fi}
+\mydefallfrak abcdefghijklmnopqrstuvwxyz\mydefallfrak
 
 \def\mydefgreek#1{\expandafter\def\csname bl#1\endcsname{\text{\boldmath$\mathbf{\csname #1\endcsname}$}}}
 \def\mydefallgreek#1{\ifx\mydefallgreek#1\else\mydefgreek{#1}%
@@ -178,9 +190,9 @@
 
 \NewDocumentCommand{\de}{gg}{
 	\IfNoValueTF{#1}
-		{\mbox{ d}}
-		{\IfNoValueTF{#2}	{\mbox{ d}#1}
-			{\frac{\mbox{d}#1}{\mbox{d}#2}}
+		{\text{ d}}
+		{\IfNoValueTF{#2}	{\text{ d}#1}
+			{\frac{\text{d}#1}{\text{d}#2}}
 	}
 }
 
@@ -188,7 +200,7 @@
 	\IfNoValueTF{#1}
 		{\partial}
 		{\IfNoValueTF{#2}	{\partial_{#1}}
-			{\frac{\partial #1}{\partial #2}}
+			{\frac{\partial {#1}}{\partial {#2}}}
 	}
 }
 
@@ -216,7 +228,9 @@
 	\newcommand{\End}{\mbox{End }}
 	\newcommand{\Rad}{\mbox{Rad }}
 	\newcommand{\Ann}{\mbox{Ann }}
+	\newcommand{\Sp}{\mbox{Sp }}
 	\newcommand{\Rk}{\mbox{rk }}
+	\newcommand{\Tr}{\mbox{tr }}
 	\newcommand{\GL}{\mbox{GL}}
 	\newcommand{\Isom}{\mbox{Isom}}
 	\newcommand{\Fix}{\mbox{Fix }}
@@ -226,6 +240,7 @@
 	\newcommand{\Supp}{\mbox{Supp }}
 	\newcommand{\Span}{\mbox{Span }}
 	\newcommand{\Symm}{\mbox{Sym }}
+	\newcommand{\Asymm}{\mbox{Asym }}
 	\newcommand{\Img}{\mbox{Im }}
 	\newcommand{\Id}{\mbox{id}}
 	\newcommand{\PS}{\mbox{PS }}
@@ -234,6 +249,7 @@
 
 	\makeatletter
 	% Permette di fare sistemi di equazioni
+		\newcommand{\hsystem}[1][]{$\left. \begin{array}{c} \gobblenext }%
 		\newcommand{\system}[1][]{$\left\{ \begin{array}{c}  \gobblenext }
 		\newcommand{\gobblenext}[1]{#1\@ifnextchar\bgroup{\\ \gobblenext}{ \end{array} \right.$ }}% Gobble next "argument"
 	\makeatother
@@ -243,4 +259,6 @@
 %---Comandi Strani---
 \newcommand{\TODO}{{\LARGE\bf TO DO}}
 
+
 \sloppy
+

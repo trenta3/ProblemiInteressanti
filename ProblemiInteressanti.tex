@@ -1,21 +1,75 @@
 \documentclass[a4paper,NoNotes,GeneralMath]{stdmdoc}
+% Data la struttura leggermente eccezionale di questo file rispetto agli altri si addice di più utilizzare una struttura basata su amsthm
+\usepackage{amsthm}
+\usepackage{hyperref}
+
+\theoremstyle{definition}
+\newtheorem{problema}{Problema}
+\newtheorem{spunto}{Spunto}
 
 \begin{document}
-	\title{Alcuni Problemi Interessanti}
+	\title{Spunti e Problemi Interessanti}
 	\autodate
 
-	\section*{Insiemi}
+	\section {Introduzione}
+	In questo file raccolgo le mie elucubrazioni varie e/o domande interessanti che mi pongo, ma alle quali non ho né il tempo né la capacità di rispondere. Man mano che ricevo soluzioni parziali o controesempi li aggiungo. Se qualcuno trova la risposta ad una delle seguenti cose me lo scriva! \\
+	Inoltre in una cartella di questo repository trovate dei files interessanti (paper o dispense) che riguardano alcune cose di nicchia per un CdL in matematica, ma che ritengo comunque piuttosto sensato conoscere.
+
+	\section {Problemi}
+	\begin{problema}[Dimensione ed isomorfismo col duale]
+		$V^{*} \simeq V$ ($V$ isomorfo al suo duale) $\implies V$ di dimensione finita?
+		\begin{itemize}
+			\item D.A. dice di averlo risolto. A quanto pare è vero...
+		\end{itemize}
+	\end{problema}
+	
+	\begin{problema}[Varietà e Compattificazione di Alexandroff]
+		Supponiamo di avere una varietà topologica $X$ (gli analisti veri possono porsi l'analoga domanda leggendo differenziabile al posto di topologica, i geometri algebrici possono leggere varietà algebrica). Ne consideriamo la compattificazione di Alexandroff (quella che aggiunge un punto solo) $\hat{X}$. La domanda che ci poniamo è: $\hat{X}$ (che a priori è solo uno spazio topologico) ha ancora una struttura di varietà topologica / differenziale / algebrica?
+	\end{problema}
+
+	\section {Spunti}
+	\begin{spunto}[Concetti metrici in ambito topologico ed ultracose]
+		Come noto, concetti come la {\it completezza}, la {\it totale limitatezza} per uno spazio metrico e l'essere {\it uniformemente continua} per una funzione sono tutti concetti metrici, ovvero non è banale definirli solo in base alla topologia. \\
+		Ispirato da \href{https://terrytao.wordpress.com/2012/04/02/a-cheap-version-of-nonstandard-analysis/}{questo post di Terry Tao} ed in particolare dall'Esercizio 3 ivi riportato, che dà una caratterizzazione della continuità uniforme in termini di oggetti nonstandard, mi chiedo se sia possibili dare simili definizioni anche per la totale limitatezza e la completezza, per poter adottare poi tali definizioni anche nel contesto di spazi topologici e vedere se ne viene fuori qualcosa di buono. \\
+		In particolare, si vorrebbe prendere come spazio l'ultralimite dello spazio topologico, con al posto di $\bbN$ come indicato nel post di Tao, un insieme di indici abbastanza grande per poter tenere a bada anche spazi non N2.
+	\end{spunto}
+	
+	\begin{spunto}[PID-dificato di un anello]
+		In analogia con quanto accade, dato un dominio d'integrità $A$, per la costruzione del campo delle frazioni, mi chiedo se si possa anche costruire un {\it "PIDdificato"} di un dominio, ovvero un anello $B$, PID (Dominio ad ideali principali), tale che $A$ si immerga in $B$ e che funzioni più o meno come il campo delle frazioni.
+		\begin{itemize}
+			\item A.M. mi fa giustamente notare come la cosa più sensata da chiedere sia se esiste il funtore aggiunto al forgetful che va dalla categoria dei PID a quella dei domini, ovvero se per ogni dominio $A$ esiste $B$ PID tale che per ogni altro anello PID $C$ e per ogni morfismo di anelli da $A$ a $C$, tale funzione si possa estendere in modo unico ad una funzione da $B$ a $C$, che coincida con la precedente quando ristretta.
+			\item G.B. ci fa sapere che tale cosa esiste già e si chiama normalizzazione. Non si può fare per tutti i domini, ma solo per quelli che sono integralmente chiusi nel campo delle frazioni.
+		\end{itemize}
+	\end{spunto}
+	
+	\begin{spunto}[Campi topologici e chiusura algebrica]
+		Supponiamo di avere un campo $K$ che è anche uno spazio topologico. Allora ci chiediamo se si può dare una topologia sensata alla chiusura algebrica di $K$?
+		\begin{itemize}
+			\item A.M. e D.A. mi dicono che si può fare una cosa sensata, e che la topologia ha pure delle proprietà simpatiche rispetto a quella di $K$. [Me la devo ancora far dire per bene]
+		\end{itemize}
+	\end{spunto}
+	
+	\begin{spunto}["Analogo" del teorema di Rouché in Analisi Reale]
+		La speranza sarebbe quella di avere una scatola nera (ruolo che nell'analisi complessa svolge il teorema di Rouché) per poter fare le varie tecnicate di analisi reale come il teorema della funzione inversa, il teorema della mappa aperta, e simili potendosi basare su questo lemma (ne metto una specie di enunciato, da specificare meglio se a qualcuno viene qualche idea più sensata): \\
+		Sia $f: \Omega \rar \bbR$ una funzione continua ($\Omega \subseteq \bbR^n$ aperto) e sia $c \in \Omega$ uno zero di $f$ tale che $\de f\mid_c$ è invertibile. Allora $\exists \varepsilon > 0$ tale che $\forall h: \Omega \rar \bbR$ $\cC^\infty$ tali che in un intorno di $c$ abbiano distanza in norma infinito da $f$ minore o uguale ad $\varepsilon$ si possa trovare un intorno di $c$ tale che $f$ ed $f+h$ hanno lo stesso numero di zeri.
+	\end{spunto}
+	
+	\begin{spunto}[Versione "pulita" e generale del Risultante]
+		La "teoria del Risultante" viene solitamente fatta nel caso di {\it due} polinomi di {\it una} variabile sola, ed è una parte di tutta l'algebra commutativa che non si può saltare: infatti, pur essendo una barca di conti con il determinante di una matrice, una volta sviluppata diventa un potente strumento al quale si appoggiano molte dimostrazioni. Ovvero è un bel modo di fare le cose che viene usato come scatola nera, ma per dimostrarlo si utilizzano troppi conti. \\
+		Quello che vorrei è vedere uno sviluppo pulito (ovvero senza conti osceni) e un pelo più generale del Risultante (So che esiste il multirisultante, ma i modi che ho visto di tirarlo fuori hanno ancora più conti e si basano sul risultante classico). In particolare ho trovato da qualche parte il seguente enunciato, che non era però dimostrato: \\
+		Siano $F_1, \ldots, F_n \in K[x_1, \ldots, x_m]$ (dove $K$ è un campo) generici polinomi (sarà chiarito in seguito) di gradi rispettivamente $d_1, \ldots, d_n$. Allora {\bf esiste un unico polinomio} $R = R_{d_1, \ldots, d_n}^{(m)} \in \bbZ[\text{coeff}(F_1, \ldots, F_n)]$ tale che:
+		\begin{enumerate}
+			\item $\{F_1 = \ldots = F_n = 0\}$ ammette soluzione $\sse R\mid_{F_1, \ldots, F_n} = 0$ come polinomio
+			\item $R\mid_{x_0^{d_0}, \ldots, x_n^{d_n}} = 1$
+			\item $R$ è un polinomio irriducibile su $\bbC[x_1, \ldots, x_m]$
+		\end{enumerate}
+		dove con $R\mid_{\text{cose}}$ si intende il polinomio $R$ valutato nei coefficienti di ciò che compare sotto (infatti il polinomio $R$ è richiesto essere in $\bbZ$ dei coefficienti dei generici polinomi di grado fissato). Ciò che si intende con generici polinomi è che si possono trattare i loro coefficienti come "indeterminate" per ottenere quindi un polinomio nei coefficienti generici che si possa valutare per ogni specificazione di $F_1, \ldots, F_n$ \\
+		L'enunciato è, inutile dirlo, in alcuni punto poco chiaro e/o ambiguo. Mi chiedo quindi se si riesca a dare una dimostrazione sensata di questo (o un enunciato leggermente modificato) e verificare se il polinomio che salta fuori abbia anche le altre proprietà del risultante classico.
+	\end{spunto}
+	
+	\section {Files Interessanti}
+	Qui di seguito elenco e commento i files interessanti che trovate nella cartella opportuna:
 	\begin{itemize}
 		\item ?
-	\end{itemize}
-
-	\section*{Algebra Lineare}
-	\begin{itemize}
-		\item $V^{*} \simeq V$ ($V$ isomorfo al suo duale) $\implies V$ di dimensione finita?
-	\end{itemize}
-
-	\section*{Analisi Reale}
-	\begin{itemize}
-		\item Trovare $\Psi: \bbR\rar\bbR$ continua $\tc \forall x\in\bbR \quad \Psi(x)\ge 0$ e $\Psi(x) = 0 \sse x \in \cC$, dove $\cC$ è l'insieme di Cantor
 	\end{itemize}
 \end{document}
