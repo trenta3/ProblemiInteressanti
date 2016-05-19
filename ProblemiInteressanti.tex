@@ -67,9 +67,32 @@
 		L'enunciato è, inutile dirlo, in alcuni punto poco chiaro e/o ambiguo. Mi chiedo quindi se si riesca a dare una dimostrazione sensata di questo (o un enunciato leggermente modificato) e verificare se il polinomio che salta fuori abbia anche le altre proprietà del risultante classico.
 	\end{spunto}
 	
+	%\begin{spunto}["Accoppiamenti di Dualità"]\end{spunto}, Quello nato dal caso delle rappresentazioni di gruppi e caratteri reali / caratteri razionali
+	
 	\section {Files Interessanti}
 	Qui di seguito elenco e commento i files interessanti che trovate nella cartella opportuna:
 	\begin{itemize}
-		\item ?
+		\item ({\it Combinatorial\_NullStellenSatz.pdf}) Come dice il nome, si tratta del NullStellenSatz combinatorio, un lemma un po' tecnico che dà però delle stime su un polinomio in più variabili in funzione del numero di zeri.
+		\item ({\it descartes.pdf}) Un file sulla regola dei segni di Cartesio, con molti enunciati particolari. Ad esempio, se ho un polinomio $p(x) \in \bbR[x]$ e so che ha tutte le radici reali, allora la regola di cartesio mi permette in questo caso di determinare esattamente quante sono negative e quante positive. Questo ad esempio consente di determinare la segnatura di una matrice simmetrica a coefficienti reali, dopo averne calcolato il polinomio caratteristico.
+		\item ({\it Prime\_Ideal\_Principle.pdf}) Un paper che sviscera completamente l'argomento di quando un ideale massimale in una certa sottofamiglia di ideali sia un ideale primo dell'anello. Argomento che, anche se potrebbe non sembrare, ricorre abbastanza in algebra.
+		\item ({\it Union\_of\_Vector\_Subspaces.pdf}) Risponde alla domanda: Quanti sottospazi vettoriali propri bisogna unire per poter coprire tutto lo spazio?
+	\end{itemize}
+	
+	\section {Trucchi Vari}
+	Riporto qualche trucchetto che potrebbe tornare utile in svariati casi
+	\begin{itemize}
+		\item Riguarda soprattutto l'Algebra Lineare. A volte ci si può aggiungere qualche ipotesi di comodo di tipo polinomiale sfruttando il fatto che $K[x_1, \ldots, x_n]$ è un dominio d'integrità. Ne do' un paio di esempi: prendiamo lo spazio delle matrici $\cM_n(K)$ $n \times n$ a coefficienti in $K$ e consideriamo le entrate della matrice come le incognite $a_{11}, a_{12}, \ldots, a_{1n}, a_{21}, \ldots, a_{nn}$. \\
+		Vogliamo ad esempio mostrare che il polinomio caratteristico di $AB$ è uguale a quello di $BA$ (si, incredibile). Siamo in grado di dimostrarlo agevolmente se almeno una delle due matrici è invertibile (WLOG $B$). Infatti si ha $\Det(AB - t \Id) = \Det(A - t B^{-1}) \Det(B) = \Det(B) \Det(A - tB^{-1}) = \Det(BA - t)$ (usando la moltiplicatività del determinante). Vorremmo però mostrarlo per tutte le matrici. \\
+		Notiamo allora che, assegnate le incognite $a_{ij}$ e $b_{ij}$ alle entrate delle due matrici $A$ e $B$, le entrate della matrice prodotto $AB$ sono polinomiali nelle entrate di $A$ e di $B$ (fare il conto). Inoltre si ha che anche il polinomio caratteristico di una matrice dipende in maniera polinomiale dalle entrate, visto che il determinante lo fa (convincersene scrivendo la formula del determinante con le permutazioni). Ci stiamo allora chiedendo se il polinomio $p(a_{ij}, b_{ij}, t) = \Det(AB - t \Id) - \Det(BA - t\Id)$ sia nullo oppure no. \\
+		Sicuramente $p(a_{ij}, b_{ij}, t) \cdot \Det(B)$ è un polinomio sempre nullo (se $B$ è invertibile è nullo il primo fattore, altrimenti si annulla il secondo) e quindi per il principio di identità dei polinomi in più variabili (se $K$ è infinito, ma vale anche senza, aspettate un attimo) è il polinomio con tutti i coefficienti nulli. Ma sappiamo inoltre che il secondo fattore non può essere il polinomio nullo, visto che se metto $B = \Id$ (identità) allora $\Det(B) = 1 \neq 0$, quindi (visto che è un dominio d'integrità) si ha $p(a_{ij}, b_{ij}, t) \equiv 0$ e quindi abbiamo dimostrato la tesi. \\
+		Se $K$ non fosse infinito, notiamo che possiamo passare alla chiusura algebrica tenendoci le stesse matrici ed il polinomio $p$ rimane invariato (come polinomio), ed ora possiamo applicare il principio di identità per ottenere che $p$ è nullo. \\
+		Questo trucco, unito alla potenza del Risultante di polinomiarizzare alcuni enunciati, è piuttosto potente. Ad esempio, ci possiamo prendere l'ipotesi di comodo che una matrice abbia tutti gli autovalori distinti (in una chiusura algebrica), visto che questa condizione si scrive come $\text{Ris}(f(x), f'(x)) = 0$ dove Ris è il risultante e $f$ è il polinomio caratteristico della matrice. Questa condizione è, ancora una volta, polinomiale.
+		\item Per quanto riguarda il passare da una disuguaglianza "debole" ad una con costanti migliori o di tipo simile, consiglio la lettura dell'\href{https://terrytao.wordpress.com/2007/09/05/amplification-arbitrage-and-the-tensor-power-trick/}{articolo} sul blog di Terry Tao, in cui fa un excursus su vari metodi, tutti piuttosto interessanti.
+	\end{itemize}
+	
+	\section {Teoremi Carini}
+	Riporto di seguito alcuni teoremi "esotici" che mi piacciono particolarmente
+	\begin{itemize}
+		\item ({\bf Lucas-Gauss}) Dice che dato un polinomio $p(x) \in \bbC[x]$ si ha che gli zeri della sua derivata $p'(x)$ sono contenuti nell'inviluppo convesso degli zeri di $p(x)$. Una cosa che mi sorprende abbastanza.
 	\end{itemize}
 \end{document}
