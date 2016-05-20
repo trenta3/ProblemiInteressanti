@@ -1,0 +1,52 @@
+\documentclass[a4paper,NoNotes,GeneralMath]{stdmdoc}
+\usepackage{amsthm}
+
+\theoremstyle{definition}
+\newtheorem{problema}{Problema}
+\newtheorem{spunto}{Spunto}
+
+\newcommand{\sgn}{\text{sgn }}
+\newcommand{\Ris}{\text{Ris }}
+
+\begin{document}
+	\title {Proprietà Polinomiali}
+	\autodate
+	
+	\section {Introduzione}
+	Ci mettiamo nello spazio delle matrici $m \times n$ a coefficienti in un campo $K$ e le vediamo parametrizzate dalle loro entrate, che pensiamo come indeterminate. Ovvero una matrice $A$ avrà come entrate $a_{ij}$ al variare di $i$ e $j$. Ci chiediamo quali operazioni / proprietà delle matrici si possano esprimere in termini di {\bf un} polinomio nelle entrate della matrice, e ne deriviamo qualche cosa. \\
+	Se doveste riuscire a risolvere alcune delle cose che non hanno risposta non esistate a scrivermi
+	
+	\section {Somma e Prodotto di matrici}
+	Date $A$ e $B$ matrici, le entrate della matrice somma $A + B$ e della matrice prodotto $AB$ si ottengono in termini di polinomi nelle entrate di $A$ e di $B$. In particolare vale $[A+B]_{ij} = A_{ij} + B_{ij}$ e $[AB]_{ij} = A_{ik}B_{kj}$
+	
+	\section {Determinante di una matrice quadrata}
+	Data $A$ matrice quadrata si ha $\Det(A)$ è un polinomio nelle entrate di $A$. In particolare si può usare la formula per la scrittura come permutazione $\Det(A) = \sum_{\sigma \in S_n} \sgn(\sigma) A_{1,\sigma(1)} A_{2,\sigma(2)} \ldots A_{n,\sigma(n)}$
+	
+	\section {Polinomio Caratteristico}
+	È piuttosto chiaro che anche il polinomio caratteristico di $A$ si possa esprimere in termini di un polinomio nelle entrate, infatti si ha $\chi_A(t) = \Det(A - t \Id)$
+	
+	\section {Diagonalizzabile con autovalori distinti nella chiusura algebrica}
+	Una matrice quadrata $A$ è diagonalizzabile con autovalori distinti se e solo se $\Ris(\chi_A(x), \chi_A'(x)) \not\equiv 0$, dove con $\Ris$ indichiamo il risultante. Infatti il risultante di un polinomio con la sua derivata è zero se e solo se il polinomio ha radici doppie. Nel caso del polinomio caratteristico le radici sono proprio gli autovalori e, se sono tutti distinti, allora la matrice $A$ è diagonalizzabile (nella chiusura algebrica) con autovalori distinti.
+	
+	\section {Inversa}
+	Le entrate della matrice inversa $A^{-1}$ NON si possono esprimere in termini polinomiali nelle entrate di $A$ perché avremmo grossi problemi quando "$A$ tende alla matrice nulla" (almeno sui reali è piuttosto chiaro). Si può però esprimere come frazione algebrica, utilizzando il fatto che $A \cdot A^* = \Det(A) \Id$ e quindi $A^{-1} = \frac{A^*}{\Det(A)}$
+	
+	\section {Polinomio minimo}
+	Probabilmente per il polinomio minimo c'è poco da fare visto che non dipende con continuità dalle entrate della matrice (ma non è escluso che si possa riportare in qualche forma ad una frazione algebrica) vedere ad esempio sui reali le matrici del tipo $ \left( \begin{array}{cc} 1 & \varepsilon \\ 0 & 1 \end{array} \right) $ che, per $\varepsilon \neq 0$ hanno polinomio minimo $(x-1)^2$ mentre per $\varepsilon = 0$ diventa $(x-1)$.
+	
+	\section {Diagonalizzabilità}
+	Qui non ne ho assolutamente idea. La domanda è se si riesca a scrivere la diagonalizzabilità (nella chiusura algebrica) in termini di un polinomio nelle entrate. Ci si può chiedere sia se la matrice sia diagonalizzabile in $K$ sia se sia diagonalizzabile in $\overline{K}$
+	
+	\section {Triangolabilità}
+	Stesso discorso di sopra, questa volta necessariamente in $K$ non algebricamente chiuso.
+	
+	\section {Rango Fissato}
+	Si vorrebbe rispondere alla domanda se una data matrice $A$ ha rango $= k$ (oppure $\le k$). \\
+	Ad esempio sappiamo rispondere se $A$ è quadrata di ordine $n$ e ci chiediamo $\Rk A \le n-1$. Basta controllare se $\Det(A) = 0$. \\
+	Per l'analogo $\Rk A \le k$ si potrebbe dire di vedere se sono nulli tutti i determinanti dei minori $(k+1)\times (k+1)$. Il problema è che noi vogliamo che si possa esprimere come {\bf un solo} polinomio, non vorrei avere condizioni multiple.
+	
+	%\section {Esempi di Applicazioni}
+	%\subsection {$\chi_AB = \chi_BA$}
+	
+	
+\end{document}
