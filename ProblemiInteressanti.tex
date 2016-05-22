@@ -26,6 +26,13 @@
 	\begin{problema}[Varietà e Compattificazione di Alexandroff]
 		Supponiamo di avere una varietà topologica $X$ (gli analisti veri possono porsi l'analoga domanda leggendo differenziabile al posto di topologica, i geometri algebrici possono leggere varietà algebrica). Ne consideriamo la compattificazione di Alexandroff (quella che aggiunge un punto solo) $\hat{X}$. La domanda che ci poniamo è: $\hat{X}$ (che a priori è solo uno spazio topologico) ha ancora una struttura di varietà topologica / differenziale / algebrica?
 	\end{problema}
+	
+	\begin{problema}[Varietà Differenziabili e Rivestimenti]
+		Sia $M$ una varietà differenziabile, e $X$ uno spazio topologico. Supponiamo di avere $p: M \rar X$ un rivestimento. Ci chiediamo se è vero che allora $X$ è anche una varietà differenziabile.
+		\begin{itemize}
+			\item La domanda mi è stata originariamente posta da L.P., e la risposta dovrebbe grosso modo essere affermativa. Controllate che la vostra costruzione torni con l'esempio di $\bbR$ e di $S^1$
+		\end{itemize}
+	\end{problema}
 
 	\section {Spunti}
 	\begin{spunto}[Concetti metrici in ambito topologico ed ultracose]
@@ -65,6 +72,11 @@
 		\end{enumerate}
 		dove con $R\mid_{\text{cose}}$ si intende il polinomio $R$ valutato nei coefficienti di ciò che compare sotto (infatti il polinomio $R$ è richiesto essere in $\bbZ$ dei coefficienti dei generici polinomi di grado fissato). Ciò che si intende con generici polinomi è che si possono trattare i loro coefficienti come "indeterminate" per ottenere quindi un polinomio nei coefficienti generici che si possa valutare per ogni specificazione di $F_1, \ldots, F_n$ \\
 		L'enunciato è, inutile dirlo, in alcuni punto poco chiaro e/o ambiguo. Mi chiedo quindi se si riesca a dare una dimostrazione sensata di questo (o un enunciato leggermente modificato) e verificare se il polinomio che salta fuori abbia anche le altre proprietà del risultante classico.
+%		\begin{itemize}
+%			\item Una strategia poteva essere quella di partire dalla definizione di determinante di matrici rettangolari usando la caratterizzazione $f$ e $g$ hanno un fattore in comune $\sse \exists a, b \in K[x_1, \ldots, x_m]$ tali che $af + bg = 0$ e con $\Deg a < \Deg g$ e $\Deg b < \Deg f$. E sfruttando il fatto che questi $a$ e $b$ esistono se e solo se i vettori $x^\alpha f$ e $x^\beta g$ sono linearmente dipendenti (con $\alpha$ e $\beta$ si intendono multiindici con le dovute restrizioni di grado). \\
+%			Questa strada spiacevolmente non si riesce ad aggiustare perché non esiste una funzione polinomiale nelle entrate di una matrice rettangolare che valga zero se e solo se la matrice non ha rango massimo. Infatti data la matrice $[a b]$ ciò vorrebbe dire di avere un polinomio in due variabili che si annulla soltanto nel punto $a = b = 0$ (che in campi algebricamente chiusi non può esistere)
+%			Resta comunque aperto il problema per matrici più grosse (magari con quelle di dimensioni \ge delle 2x3 si riesce)
+%		\end{itemize}
 	\end{spunto}
 	
 	\begin{spunto}[Proprietà di finitezza (Compattezza, Connessione, Irriducibilità)]
