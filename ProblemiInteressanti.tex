@@ -33,6 +33,10 @@
 			\item La domanda mi è stata originariamente posta da L.P., e la risposta dovrebbe grosso modo essere affermativa. Controllate che la vostra costruzione torni con l'esempio di $\bbR$ e di $S^1$
 		\end{itemize}
 	\end{problema}
+	
+	\begin{problema}[Campi tolopogici: compattificazione e proiettivizzato]
+		Sia $K$ un campo topologico. Ci chiediamo se la sua compattificazione di Alexandroff ed il suo proiettivizzato ($K^2$ modulo la solita relazione di equivalenza), visti come spazi topologici, siano omeomorfi.
+	\end{problema}
 
 	\section {Spunti}
 	\begin{spunto}[Concetti metrici in ambito topologico ed ultracose]
@@ -95,6 +99,16 @@
 			\item Sia $Y$ uno spazio topologico connesso ed $f: X \rar Y$ una mappa $\cC^0$ e surgettiva tale che $f^{-1}(y)$ è connesso $\forall y \in Y$. Se $f$ è aperta oppure chiusa, allora anche $X$ è connesso.
 			\item [Mi pare che sia vero ma al momento non trovo parti da cui stia scritto] Sia $Y$ un irriducibile e $f: X \rar Y$ morfismo dominante di varietà. Se $\forall y \in Y$ si ha $f^{-1}(y)$ è irriducibile allora anche $X$ è irriducibile.
 		\end{enumerate}
+		Inoltre mi è venuto in mente che la proprietà "Essere di Baer" potrebbe essere una di queste. $X$ si dice di Baer se, presa una quantità numerabile di chiusi $C_i$ a parte interna vuota, anche la loro unione ha parte interna vuota. Ci chiediamo allora se valgano le seguenti cose:
+		\begin{enumerate}
+			\item $f: X \rar Y$ continua e surgettiva. Se $X$ è di Baer allora anche $Y$ è di Baer
+			\item Sia $X \subseteq Y$, e tale che $X$ è di Baer, allora $\overline{X}$ è di Baer
+			\item Sia $f: X \rar Y$ surgettiva. Se $Y$ è di Baer e $\forall y \in Y \quad f^{-1}(y)$ è di Baer allora anche $X$ è di Baer.
+		\end{enumerate}
+	\end{spunto}
+	
+	\begin{spunto}[Completamenti di vario genere]
+		Anche se non so troppo di preciso che cosa sia un ultraprodotto / ultralimite, dovrebbero essere vero che sia la compattificazione di Stone-Cech che il completamento metrico lo sono. Mi chiedevo di che altre proprietà godano queste cose e quali altri completamenti si possano fare con queste cose.
 	\end{spunto}
 	
 	%\begin{spunto}["Accoppiamenti di Dualità"]\end{spunto}, Quello nato dal caso delle rappresentazioni di gruppi e caratteri reali / caratteri razionali
