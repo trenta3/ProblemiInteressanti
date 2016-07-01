@@ -94,10 +94,15 @@
 			\item Il prodotto di due varietà irriducibile è irriducibile. (Qui si intende prodotto categorico) \hrule
 			\item Se un insieme è connesso anche la sua chiusura è connessa
 			\item Se un insieme è irriducibile anche la sua chiusura è irriducibile (ed è una varietà algebrica)
-			\item [Ci chiediamo se sia vero anche per i compatti, ovvero se un insieme è compatto ma non chiuso, la sua chiusura è compatta?] \hrule
+			\item Ci chiediamo se sia vero anche per i compatti, ovvero se un insieme è compatto ma non chiuso, la sua chiusura è compatta? \\
+				\begin{itemize}
+					\item D.A. ha trovato un controesempio: Consideriamo l'intervallo $[0,1]$ con numerabili copie dell'elemento $\frac{1}{2}$, ovvero lo spazio insiemisticamente formato da questi elementi dove una base degli aperti sono gli intervalli aperti $(a, b)$ con $0 \le a < b \le 1$ dove al posto di $\frac{1}{2}$ si può prendere una qualsiasi copia di $\frac{1}{2}$. \\
+					Ora, se consideriamo il sottospazio $[0,1]$ "standard" (con una sola copia di $\frac{1}{2}$) si ha che esso ha la stessa topologia di quella euclidea, ed è quindi compatto. La chiusura coincide con tutto il suddetto spazio topologico, che però non è compatto: infatti posso considerare il ricoprimento con gli aperti $[0, 1]$ dove ogni volta scelgo una sola copia di $\frac{1}{2}$ ogni volta diversa dalle altre. In questo modo ogni unione finita copre solo un numero finito di copie di $\frac{1}{2}$.
+				\end{itemize}
+				\hrule
 			\item Sia $f: X \rar Y$ un'applicazione chiusa. Se $Y$ è compatto e $f^{-1}(y)$ è compatto $\forall y \in Y$ allora anche $X$ è compatto.
 			\item Sia $Y$ uno spazio topologico connesso ed $f: X \rar Y$ una mappa $\cC^0$ e surgettiva tale che $f^{-1}(y)$ è connesso $\forall y \in Y$. Se $f$ è aperta oppure chiusa, allora anche $X$ è connesso.
-			\item [Mi pare che sia vero ma al momento non trovo parti da cui stia scritto] Sia $Y$ un irriducibile e $f: X \rar Y$ morfismo dominante di varietà. Se $\forall y \in Y$ si ha $f^{-1}(y)$ è irriducibile allora anche $X$ è irriducibile.
+			\item (Mi pare che sia vero ma al momento non trovo parti da cui stia scritto) Sia $Y$ un irriducibile e $f: X \rar Y$ morfismo dominante di varietà. Se $\forall y \in Y$ si ha $f^{-1}(y)$ è irriducibile allora anche $X$ è irriducibile.
 		\end{enumerate}
 		Inoltre mi è venuto in mente che la proprietà "Essere di Baer" potrebbe essere una di queste. $X$ si dice di Baer se, presa una quantità numerabile di chiusi $C_i$ a parte interna vuota, anche la loro unione ha parte interna vuota. Ci chiediamo allora se valgano le seguenti cose:
 		\begin{enumerate}
