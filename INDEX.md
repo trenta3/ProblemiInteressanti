@@ -1,1 +1,1 @@
-Potete trovare i _sorgenti_ dei file pdf in [questo repository](http://github.com/trenta3/ProblemiInteressanti)
+Potete trovare i __sorgenti__ dei file pdf in [questo repository](http://github.com/trenta3/ProblemiInteressanti)
