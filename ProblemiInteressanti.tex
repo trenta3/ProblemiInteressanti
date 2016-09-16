@@ -110,6 +110,23 @@
 			\item Sia $X \subseteq Y$, e tale che $X$ è di Baer, allora $\overline{X}$ è di Baer
 			\item Sia $f: X \rar Y$ surgettiva. Se $Y$ è di Baer e $\forall y \in Y \quad f^{-1}(y)$ è di Baer allora anche $X$ è di Baer.
 		\end{enumerate}
+		Poi dovrebbe valere anche con i moduli semisemplici. Se non sbaglio infatti si ha
+		\begin{enumerate}
+			\item Sia $f: X \rar Y$ morfismo di $A$-moduli surgettivo. Se $X$ è semisemplice allora anche $Y$ è semisemplice.
+		\end{enumerate}
+		Bisognerebbe verificare se valgono anche le altre due proprietà (anche se quella sulla chiusura non saprei come esprimerla).
+		Inoltre potrebbe valere con i gruppi semplici, e con le teorie logiche complete e coerenti (più o meno come scritto sul machì, più o meno alla fine del Capitolo 4).
+		In particolare il machì suggerisce un paio di proprietà aggiuntive che potrebbero essere sensate:
+		\begin{enumerate}
+			\item Sia $(X, \tau)$ uno spazio topologico dove $\tau$ è una topologia compatta e di Haussdorf. Allora:
+				\begin{enumerate}
+					\item Se $\tau \subseteq \tau_{+}$ allora $(X, \tau_{+})$ non è più compatto.
+					\item Se $\tau_{-} \subseteq \tau$ allora $(X, \tau_{-})$ non è più di Haussdorf.
+				\end{enumerate}
+			\item Sia $T$ una teoria completa e coerente. Se si toglie un assioma $\psi$ la teoria $T'$ che si ottiene non è più completa. Se invece si aggiunge una formula non derivabile dagli assiomi di $T$ si ottiene una teoria $T'$ che non è più coerente.
+			\item Sia $G$ un gruppo dato con generatori e relazioni $G = \langle X \mid R \rangle$. Se $G \neq \{ e \}$ è semplice, allora il gruppo $G_1 = \langle X \mid R \setminus r \rangle$ (ovvero togliamo una relazione) non è più semplice.
+				Inoltre dato un gruppo presentato con generatori e relazione, egli è semplice se e solo se ogni qualvolta si aggiunge ad $R$ una parola $w \neq 1$ si ottiene il gruppo identico.
+		\end{enumerate} 
 	\end{spunto}
 	
 	\begin{spunto}[Completamenti di vario genere]
