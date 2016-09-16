@@ -37,6 +37,15 @@
 	\begin{problema}[Campi tolopogici: compattificazione e proiettivizzato]
 		Sia $K$ un campo topologico. Ci chiediamo se la sua compattificazione di Alexandroff ed il suo proiettivizzato ($K^2$ modulo la solita relazione di equivalenza), visti come spazi topologici, siano omeomorfi.
 	\end{problema}
+	
+	\begin{problema}[Invarianti per similitudine con matrici di permutazione]
+		Si considerino le matrici $n \times n$ a coefficienti in un campo $K$. Si chiede di determinare degli inviarianti (e possibilmente degli algoritmi per calcolarli) per la seguente relazione di equivalenza: $ M \simeq N \sse \exists P $ matrice di permutazione tale che $M = P N P^{-1}$. Per matrici di permutazione si intendono matrici ad entrate di soli uni e zeri e tali che su ogni colonna e su ogni riga vi sia esattamente un uno. \\
+		Questo problema nasce dal considerare che molte strutture (ad esempio i grafi) hanno come "classe di automorfismi" il relabeling di alcune loro costituenti (ad esempio i nodi). \\
+		Si può notare che gli invarianti classici per la similitudine devono essere rispettati (in particolare autovalori e molteplicità geometrico/algebriche, etc.) Si chiede di determinare un sistema completo di invarianti per questa relazione un po' più stretta. \\
+		\begin{itemize}
+			\item Si potrebbe approcciare il problema considerando l'azione di $S_n$ (gruppo simmetrico con $n$ elementi), visto che sono proprio le matrici di permutazione. Le matrici $n \times n$ ne sarebbero quindi una rappresentazione, si potrebbe provare a scomporla in irriducibili...
+		\end{itemize}
+	\end{problema}
 
 	\section {Spunti}
 	\begin{spunto}[Concetti metrici in ambito topologico ed ultracose]
@@ -131,6 +140,13 @@
 	
 	\begin{spunto}[Completamenti di vario genere]
 		Anche se non so troppo di preciso che cosa sia un ultraprodotto / ultralimite, dovrebbero essere vero che sia la compattificazione di Stone-Cech che il completamento metrico lo sono. Mi chiedevo di che altre proprietà godano queste cose e quali altri completamenti si possano fare con queste cose.
+	\end{spunto}
+	
+	\begin{spunto}[Rappresentazione indotta e Transfer di Artin]
+		Su internet ho trovato un'affermazione simile al fatto che il transfer di artin si potesse ottenere come determinante di una rappresentazione di $\bbF_2 [G]$. Cerco un modo di formalizzare questa cosa e di scriverla per bene. In particolare si viene portati a pensare questo guardando la definizione delle due cose e vedendo che gli striccheggi effettuati sono più o meno gli stessi. \\
+		\begin{itemize}
+			\item La seguente potrebbe essere una strada: si consideri $P$ sottogruppo di $G$. e si consideri l'azione di $G$ sulle classi laterali $G/P$. 
+		\end{itemize}
 	\end{spunto}
 	
 	%\begin{spunto}["Accoppiamenti di Dualità"]\end{spunto}, Quello nato dal caso delle rappresentazioni di gruppi e caratteri reali / caratteri razionali
